@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171715">
+  <title>Crossroads | October 2026</title>
+  <meta name="description" content="Explore October 2026 Crossroads classes across York Alliance, Spring Grove Alliance, and ValleyView Alliance.">
+  <style>
+    :root{
+      --ink:#1f211d;--muted:#6a675f;--paper:#f7f3ec;--card:#fffdf8;--line:#ddd5c8;
+      --accent:#b56a2b;--accent-soft:#f0dfcf;--dark:#171715;--white:#fff;
+      --shadow:0 18px 50px rgba(31,33,29,.10);--max:1160px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#fbf8f2,var(--paper));color:var(--ink);line-height:1.55}
+    button,a{font:inherit}
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 28px));margin-inline:auto}
+
+    .hero{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:auto -10vw -38% 45%;height:420px;background:radial-gradient(circle,rgba(181,106,43,.42),transparent 68%);pointer-events:none}
+    .hero-inner{position:relative;z-index:1;padding:38px 0 34px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+    .brand{display:block;margin-bottom:24px}
+    .brand-logo{display:block;width:min(100%,560px);height:auto;object-fit:contain;object-position:left center}
+    .eyebrow{color:#e8b17d;text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:800}
+    h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(2.45rem,7vw,5.4rem);line-height:.94;letter-spacing:-.05em;margin:.12em 0 .16em}
+    .subtitle{max-width:720px;color:#d8d4cd;font-size:clamp(1rem,2vw,1.18rem);margin:0}
+    .hero-card{min-width:260px;max-width:320px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);backdrop-filter:blur(10px);padding:18px;border-radius:18px}
+    .hero-card strong{display:block;font-size:1.05rem;margin-bottom:5px}.hero-card p{margin:0;color:#ded8cf}.hero-card .dates{font-weight:760;color:#fff;margin-bottom:8px}
+
+    .action-bar{position:sticky;top:0;z-index:20;background:rgba(247,243,236,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .action-inner{display:flex;gap:10px;align-items:center;padding:10px 0;overflow-x:auto;scrollbar-width:none}.action-inner::-webkit-scrollbar{display:none}
+    .btn,.filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;white-space:nowrap;text-decoration:none;font-weight:760;cursor:pointer}
+    .btn.primary{background:var(--dark);color:#fff;border-color:var(--dark)}
+    .filter[aria-pressed="true"]{background:var(--accent-soft);border-color:#d7b18e;color:#6d3a12}
+    .spacer{flex:1}
+
+    main{padding:24px 0 92px}
+    .intro-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-bottom:24px}
+    .info-card{background:rgba(255,253,248,.82);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 9px 26px rgba(31,33,29,.05)}
+    .info-card h2{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 7px}.info-card p{margin:0;color:var(--muted)}
+    .date-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.date-pill{padding:7px 10px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:.9rem;font-weight:700}
+
+    .section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin:30px 0 14px}
+    .section-head h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,5vw,3rem);font-weight:500;letter-spacing:-.035em;margin:0}.section-head p{margin:0;color:var(--muted)}
+    .count{font-size:.9rem;color:var(--muted);white-space:nowrap}
+
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .course{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0;transition:transform .18s ease,box-shadow .18s ease}
+    .course:hover{transform:translateY(-2px);box-shadow:0 22px 55px rgba(31,33,29,.13)}
+    .course-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.campus{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:#f2ede5;color:#5f584e;font-size:.78rem;font-weight:800}.campus::before{content:"";width:7px;height:7px;background:var(--accent);border-radius:50%}
+    .course h3{font-family:Georgia,"Times New Roman",serif;font-size:1.55rem;line-height:1.05;letter-spacing:-.025em;margin:14px 0 7px}.leaders{font-weight:730;color:#47433d;margin:0 0 12px}.summary{color:var(--muted);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.tag{font-size:.75rem;padding:5px 8px;background:#fff;border:1px solid var(--line);border-radius:999px;color:#625b51}
+    .meta-note{margin-top:12px;padding:10px 12px;background:#f7efe6;border-radius:12px;color:#634424;font-size:.9rem}
+    .course-actions{margin-top:auto;padding-top:17px}.details-btn{width:100%;border:0;background:var(--dark);color:#fff;border-radius:12px;padding:11px 13px;font-weight:800;cursor:pointer}
+
+    .locations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.location{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px}.location h3{margin:0 0 5px;font-size:1.05rem}.location p{margin:0;color:var(--muted);font-size:.94rem}.location a{display:inline-block;margin-top:11px;font-weight:780;color:#6f3e17;text-decoration:none}
+
+    dialog{border:0;padding:0;background:transparent;max-width:min(680px,calc(100% - 22px));width:100%}dialog::backdrop{background:rgba(17,17,16,.66);backdrop-filter:blur(4px)}
+    .dialog-card{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.30)}.dialog-head{padding:22px 22px 12px;display:flex;justify-content:space-between;gap:16px}.dialog-head h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.9rem,7vw,2.8rem);line-height:1;letter-spacing:-.035em;margin:9px 0 7px}.dialog-close{border:1px solid var(--line);background:#fff;border-radius:999px;width:40px;height:40px;cursor:pointer;font-size:1.3rem;flex:0 0 40px}.dialog-body{padding:0 22px 24px}.dialog-body p{color:#514c44}.dialog-body .leaders{color:var(--ink)}.dialog-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.dialog-cta a{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border:1px solid var(--line);padding:12px;border-radius:12px;font-weight:800;background:#fff}.dialog-cta a.primary{background:var(--dark);color:#fff;border-color:var(--dark)}
+
+    .mobile-register{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px max(12px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:rgba(247,243,236,.96);border-top:1px solid var(--line);backdrop-filter:blur(12px)}.mobile-register a{display:flex;justify-content:center;text-decoration:none;background:var(--dark);color:#fff;padding:13px;border-radius:12px;font-weight:850}
+    .footer{padding:10px 0 34px;color:var(--muted);font-size:.9rem}.footer a{font-weight:700}
+    .hidden{display:none!important}
+
+    @media(max-width:800px){
+      .hero-inner{grid-template-columns:1fr;gap:18px}.hero-card{max-width:none}.intro-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.locations{grid-template-columns:1fr}.spacer{display:none}.mobile-register{display:block}.action-inner .primary{display:none}main{padding-bottom:110px}.course{padding:17px}.summary{-webkit-line-clamp:4}.section-head{align-items:start;flex-direction:column;gap:4px}.brand-logo{width:min(100%,470px)}.dialog-cta{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="brand">
+          <img class="brand-logo" src="crossroads-logo-white.png" alt="Crossroads — Jeremiah 6:16">
+        </div>
+        <div class="eyebrow" id="session-label"></div>
+        <h1>Choose a class.<br>Practice the way of Jesus.</h1>
+        <p class="subtitle" id="session-subtitle"></p>
+      </div>
+      <aside class="hero-card" aria-label="Session schedule">
+        <strong>Four Wednesday nights</strong>
+        <div class="dates" id="hero-dates"></div>
+        <p id="hero-time"></p>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="action-bar" aria-label="Class filters and actions">
+    <div class="wrap action-inner" id="filters">
+      <button class="filter" data-filter="all" aria-pressed="true">All classes</button>
+      <button class="filter" data-filter="york" aria-pressed="false">York</button>
+      <button class="filter" data-filter="spring-grove" aria-pressed="false">Spring Grove</button>
+      <button class="filter" data-filter="valleyview" aria-pressed="false">ValleyView</button>
+      <span class="spacer"></span>
+      <a class="btn" href="#locations">Locations</a>
+      <a class="btn primary" id="register-top" href="https://yafc.churchcenter.com/people/forms/1319101">Register</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="intro-grid" aria-label="Crossroads overview">
+      <div class="info-card">
+        <h2>One class. Four weeks.</h2>
+        <p>Choose one class and stay with it through all four sessions. Use the campus filters to quickly see what is offered near you.</p>
+        <div class="date-pills" id="date-pills"></div>
+      </div>
+      <div class="info-card">
+        <h2>Start together</h2>
+        <p id="opening-note"></p>
+      </div>
+    </section>
+
+    <section aria-labelledby="classes-heading">
+      <div class="section-head"><div><p>October 2026</p><h2 id="classes-heading">Explore classes</h2></div><div class="count" id="result-count"></div></div>
+      <div class="grid" id="course-grid"></div>
+    </section>
+
+    <section id="locations" aria-labelledby="locations-heading">
+      <div class="section-head"><div><p>Three campuses</p><h2 id="locations-heading">Class locations</h2></div></div>
+      <div class="locations" id="location-grid"></div>
+    </section>
+
+    <footer class="footer">
+      Questions? Contact the York Alliance office at <a href="tel:+17178481700">(717) 848-1700</a> or <a href="mailto:info@yorkalliance.org">info@yorkalliance.org</a>.
+    </footer>
+  </main>
+
+  <dialog id="course-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-card">
+      <div class="dialog-head"><div><span class="campus" id="dialog-campus"></span><h2 id="dialog-title"></h2></div><button class="dialog-close" id="dialog-close" aria-label="Close">×</button></div>
+      <div class="dialog-body">
+        <p class="leaders" id="dialog-leaders"></p>
+        <p id="dialog-description"></p>
+        <div id="dialog-notes"></div>
+        <div class="dialog-cta"><a id="dialog-directions" href="#" target="_blank" rel="noopener">Directions</a><a class="primary" id="dialog-register" href="https://yafc.churchcenter.com/people/forms/1319101">Register</a></div>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="mobile-register"><a id="register-mobile" href="https://yafc.churchcenter.com/people/forms/1319101">Register for Crossroads</a></div>
+
+  <script src="crossroads-data.js"></script>
+  <script>
+    const data = window.CROSSROADS_DATA;
+    const campusById = Object.fromEntries(data.campuses.map(c => [c.id,c]));
+    let activeFilter = 'all';
+
+    document.getElementById('session-label').textContent = data.session.label;
+    document.getElementById('session-subtitle').textContent = data.session.subtitle;
+    document.getElementById('hero-dates').textContent = data.session.dates.map(d=>d.replace('October ','Oct ')).join(' · ');
+    document.getElementById('hero-time').textContent = `${data.session.startTime}–${data.session.endTime}`;
+    document.getElementById('opening-note').textContent = data.session.openingNote;
+    document.querySelectorAll('#register-top,#register-mobile,#dialog-register').forEach(a=>a.href=data.session.registrationUrl);
+
+    document.getElementById('date-pills').innerHTML = data.session.dates.map(d=>`<span class="date-pill">${d}</span>`).join('');
+
+    function renderClasses(){
+      const list = activeFilter === 'all' ? data.classes : data.classes.filter(c=>c.campus===activeFilter);
+      document.getElementById('result-count').textContent = `${list.length} ${list.length===1?'class':'classes'}`;
+      document.getElementById('course-grid').innerHTML = list.map((c,idx)=>{
+        const campus=campusById[c.campus];
+        const note=[c.capacity,c.requirement].filter(Boolean).join(' · ');
+        return `<article class="course">
+          <div class="course-top"><span class="campus">${campus.shortName}</span></div>
+          <h3>${c.title}</h3>
+          <p class="leaders">${c.leaders}</p>
+          <p class="summary">${c.description}</p>
+          <div class="tags">${(c.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+          ${note?`<div class="meta-note">${note}</div>`:''}
+          <div class="course-actions"><button class="details-btn" data-course="${data.classes.indexOf(c)}">View class details</button></div>
+        </article>`
+      }).join('');
+      document.querySelectorAll('.details-btn').forEach(b=>b.addEventListener('click',()=>openCourse(Number(b.dataset.course))));
+    }
+
+    function renderLocations(){
+      document.getElementById('location-grid').innerHTML=data.campuses.map(c=>`<article class="location"><h3>${c.name}</h3>${c.venueNote?`<p>${c.venueNote}</p>`:''}<p>${c.address}</p><a href="${c.directionsUrl}" target="_blank" rel="noopener">Get directions →</a></article>`).join('');
+    }
+
+    function openCourse(index){
+      const c=data.classes[index], campus=campusById[c.campus];
+      document.getElementById('dialog-campus').textContent=campus.shortName;
+      document.getElementById('dialog-title').textContent=c.title;
+      document.getElementById('dialog-leaders').textContent=c.leaders;
+      document.getElementById('dialog-description').textContent=c.description;
+      const notes=[]; if(c.capacity) notes.push(`<div class="meta-note"><strong>Capacity:</strong> ${c.capacity}</div>`); if(c.requirement) notes.push(`<div class="meta-note"><strong>Good to know:</strong> ${c.requirement}</div>`);
+      document.getElementById('dialog-notes').innerHTML=notes.join('');
+      document.getElementById('dialog-directions').href=campus.directionsUrl;
+      const dialog=document.getElementById('course-dialog'); dialog.showModal();
+    }
+
+    document.getElementById('dialog-close').addEventListener('click',()=>document.getElementById('course-dialog').close());
+    document.getElementById('course-dialog').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
+    document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+      activeFilter=btn.dataset.filter;
+      document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+      renderClasses();
+    }));
+
+    renderClasses(); renderLocations();
+  </script>
+</body>
+</html>
