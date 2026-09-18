@@ -2,7 +2,7 @@ window.CROSSROADS_DATA = {
   session: {
     label: "October 2026",
     title: "Crossroads",
-    subtitle: "Four weeks of learning, practice, and community across the York Alliance family.",
+    subtitle: "Four weeks of learning, practice, and community across the York Alliance Family of Churches.",
     dates: ["October 7", "October 14", "October 21", "October 28"],
     startTime: "6:30 PM",
     endTime: "8:00 PM",
