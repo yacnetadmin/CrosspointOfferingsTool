@@ -2,118 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#171715">
 
-  <title>Crossroads | October 2026</title>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Crossroads">
+  <meta name="application-name" content="Crossroads">
 
+  <title>Crossroads | October 2026</title>
   <meta
     name="description"
     content="Explore October 2026 Crossroads classes across York Alliance, Spring Grove Alliance, and ValleyView Alliance."
   >
 
-  <link
-    rel="canonical"
-    href="https://yacnetadmin.github.io/CrosspointOfferingsTool/"
-  >
+  <link rel="canonical" href="https://yacnetadmin.github.io/CrosspointOfferingsTool/">
 
-  <!-- Open Graph -->
+  <!-- Social sharing -->
   <meta property="og:type" content="website">
-
-  <meta
-    property="og:site_name"
-    content="YAFoC Crossroads"
-  >
-
-  <meta
-    property="og:title"
-    content="Crossroads | October 2026"
-  >
-
+  <meta property="og:site_name" content="YAFoC Crossroads">
+  <meta property="og:title" content="Crossroads | October 2026">
   <meta
     property="og:description"
     content="Explore Crossroads classes across the York Alliance Family of Churches and register for October 2026."
   >
-
-  <meta
-    property="og:url"
-    content="https://yacnetadmin.github.io/CrosspointOfferingsTool/"
-  >
-
+  <meta property="og:url" content="https://yacnetadmin.github.io/CrosspointOfferingsTool/">
   <meta
     property="og:image"
     content="https://yacnetadmin.github.io/CrosspointOfferingsTool/xroads_social_share.png"
   >
-
   <meta
     property="og:image:secure_url"
     content="https://yacnetadmin.github.io/CrosspointOfferingsTool/xroads_social_share.png"
   >
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Crossroads — Jeremiah 6:16">
 
-  <meta
-    property="og:image:type"
-    content="image/png"
-  >
-
-  <meta
-    property="og:image:width"
-    content="1200"
-  >
-
-  <meta
-    property="og:image:height"
-    content="630"
-  >
-
-  <meta
-    property="og:image:alt"
-    content="Crossroads — Jeremiah 6:16"
-  >
-
-  <!-- X / Twitter -->
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Crossroads | October 2026"
-  >
-
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crossroads | October 2026">
   <meta
     name="twitter:description"
     content="Explore classes, choose a campus, and register for Crossroads."
   >
-
   <meta
     name="twitter:image"
     content="https://yacnetadmin.github.io/CrosspointOfferingsTool/xroads_social_share.png"
   >
-
-  <meta
-    name="twitter:image:alt"
-    content="Crossroads — Jeremiah 6:16"
-  >
+  <meta name="twitter:image:alt" content="Crossroads — Jeremiah 6:16">
 
   <style>
     :root {
-      --ink: #1f211d;
-      --muted: #6a675f;
-      --paper: #f7f3ec;
-      --card: #fffdf8;
-      --line: #ddd5c8;
-      --accent: #b56a2b;
-      --accent-soft: #f0dfcf;
+      --ink: #20211f;
+      --muted: #6c685f;
+      --paper: #f5f1ea;
+      --surface: #fffdf9;
+      --surface-2: #f0ebe3;
+      --line: #ded6ca;
+      --accent: #b66c2f;
+      --accent-soft: #f3e2d1;
       --dark: #171715;
-      --white: #ffffff;
-      --shadow: 0 18px 50px rgba(31, 33, 29, 0.10);
-      --max: 1160px;
+      --dark-2: #24231f;
+      --white: #fff;
+      --shadow: 0 14px 38px rgba(29, 27, 23, .09);
+      --shadow-lg: 0 28px 80px rgba(12, 11, 10, .28);
+      --max: 1120px;
+      --radius: 20px;
     }
 
     * {
@@ -121,788 +77,801 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      background: var(--paper);
       -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     body {
       margin: 0;
+      min-height: 100vh;
       font-family:
+        Inter,
         ui-sans-serif,
         system-ui,
         -apple-system,
+        BlinkMacSystemFont,
         "Segoe UI",
-        Roboto,
-        Arial,
         sans-serif;
-      background:
-        linear-gradient(
-          180deg,
-          #fbf8f2,
-          var(--paper)
-        );
       color: var(--ink);
-      line-height: 1.55;
+      background:
+        radial-gradient(circle at 85% -5%, rgba(182,108,47,.12), transparent 30rem),
+        var(--paper);
+      -webkit-font-smoothing: antialiased;
     }
 
     button,
     a {
       font: inherit;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    a {
+    button {
       color: inherit;
     }
 
-    .wrap {
-      width: min(
-        var(--max),
-        calc(100% - 28px)
-      );
+    .shell {
+      width: min(var(--max), calc(100% - 28px));
       margin-inline: auto;
     }
 
-    .hero {
-      background: var(--dark);
-      color: #ffffff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset:
-        auto
-        -10vw
-        -38%
-        45%;
-      height: 420px;
-      background:
-        radial-gradient(
-          circle,
-          rgba(181, 106, 43, 0.42),
-          transparent 68%
-        );
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      padding:
-        38px
-        0
-        34px;
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        auto;
-      gap: 32px;
-      align-items: end;
-    }
-
-    .brand {
-      display: block;
-      margin-bottom: 24px;
-    }
-
-    .brand-logo {
-      display: block;
-      width: min(100%, 560px);
-      height: auto;
-      object-fit: contain;
-      object-position: left center;
-    }
-
-    .eyebrow {
-      color: #e8b17d;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.76rem;
-      font-weight: 800;
-    }
-
-    h1 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-weight: 500;
-      font-size:
-        clamp(
-          2.45rem,
-          7vw,
-          5.4rem
-        );
-      line-height: 0.94;
-      letter-spacing: -0.05em;
-      margin:
-        0.12em
-        0
-        0.16em;
-    }
-
-    .subtitle {
-      max-width: 720px;
-      color: #d8d4cd;
-      font-size:
-        clamp(
-          1rem,
-          2vw,
-          1.18rem
-        );
-      margin: 0;
-    }
-
-    .hero-card {
-      min-width: 260px;
-      max-width: 320px;
-      border:
-        1px solid
-        rgba(255, 255, 255, 0.18);
-      background:
-        rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(10px);
-      padding: 18px;
-      border-radius: 18px;
-    }
-
-    .hero-card strong {
-      display: block;
-      font-size: 1.05rem;
-      margin-bottom: 5px;
-    }
-
-    .hero-card p {
-      margin: 0;
-      color: #ded8cf;
-    }
-
-    .hero-card .dates {
-      font-weight: 760;
-      color: #ffffff;
-      margin-bottom: 8px;
-    }
-
-    .action-bar {
+    /* App chrome */
+    .app-toolbar {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background:
-        rgba(
-          247,
-          243,
-          236,
-          0.94
-        );
-      backdrop-filter: blur(12px);
-      border-bottom:
-        1px solid
-        var(--line);
+      z-index: 50;
+      padding-top: env(safe-area-inset-top);
+      background: rgba(23, 23, 21, .96);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .action-inner {
+    .toolbar-inner {
+      min-height: 68px;
       display: flex;
-      gap: 10px;
       align-items: center;
-      padding: 10px 0;
-      overflow-x: auto;
-      scrollbar-width: none;
+      gap: 16px;
     }
 
-    .action-inner::-webkit-scrollbar {
-      display: none;
+    .toolbar-logo {
+      display: block;
+      width: min(238px, 47vw);
+      height: auto;
     }
 
-    .btn,
-    .filter {
-      border:
-        1px solid
-        var(--line);
-      background: #ffffff;
-      border-radius: 999px;
-      padding:
-        10px
-        14px;
-      white-space: nowrap;
-      text-decoration: none;
-      font-weight: 760;
-      cursor: pointer;
-    }
-
-    .btn.primary {
-      background: var(--dark);
-      color: #ffffff;
-      border-color: var(--dark);
-    }
-
-    .filter[aria-pressed="true"] {
-      background: var(--accent-soft);
-      border-color: #d7b18e;
-      color: #6d3a12;
-    }
-
-    .spacer {
+    .toolbar-spacer {
       flex: 1;
     }
 
-    main {
-      padding:
-        24px
-        0
-        92px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns:
-        1.25fr
-        0.75fr;
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
-    .info-card {
-      background:
-        rgba(
-          255,
-          253,
-          248,
-          0.82
-        );
-      border:
-        1px solid
-        var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow:
-        0
-        9px
-        26px
-        rgba(
-          31,
-          33,
-          29,
-          0.05
-        );
-    }
-
-    .info-card h2 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size: 1.6rem;
-      margin:
-        0
-        0
-        7px;
-    }
-
-    .info-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .date-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    .date-pill {
-      padding:
-        7px
-        10px;
-      border-radius: 10px;
-      background: #ffffff;
-      border:
-        1px solid
-        var(--line);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: end;
-      margin:
-        30px
-        0
-        14px;
-    }
-
-    .section-head h2 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size:
-        clamp(
-          2rem,
-          5vw,
-          3rem
-        );
-      font-weight: 500;
-      letter-spacing: -0.035em;
-      margin: 0;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .count {
-      font-size: 0.9rem;
-      color: var(--muted);
+    .toolbar-date {
+      color: #cabfae;
+      font-size: .82rem;
+      font-weight: 750;
+      letter-spacing: .04em;
       white-space: nowrap;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns:
-        repeat(
-          2,
-          minmax(0, 1fr)
-        );
-      gap: 16px;
-    }
-
-    .course {
-      background: var(--card);
-      border:
-        1px solid
-        var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease;
-    }
-
-    .course:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0
-        22px
-        55px
-        rgba(
-          31,
-          33,
-          29,
-          0.13
-        );
-    }
-
-    .course-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .campus {
+    .register-button {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      padding:
-        6px
-        9px;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 0;
       border-radius: 999px;
-      background: #f2ede5;
-      color: #5f584e;
-      font-size: 0.78rem;
-      font-weight: 800;
+      background: #fff;
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 820;
+      white-space: nowrap;
     }
 
-    .campus::before {
+    /* Dashboard header */
+    .dashboard {
+      padding: 22px 0 12px;
+    }
+
+    .dashboard-card {
+      overflow: hidden;
+      position: relative;
+      padding: clamp(22px, 5vw, 42px);
+      border-radius: 28px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 84% 84%, rgba(184,105,44,.50), transparent 37%),
+        linear-gradient(135deg, #1c1b19 0%, #29251f 58%, #171715 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-card::after {
       content: "";
-      width: 7px;
-      height: 7px;
-      background: var(--accent);
+      position: absolute;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
+      right: -110px;
+      top: -125px;
+      border: 1px solid rgba(255,255,255,.08);
     }
 
-    .course h3 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size: 1.55rem;
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      margin:
-        14px
-        0
-        7px;
-    }
-
-    .leaders {
-      font-weight: 730;
-      color: #47433d;
-      margin:
-        0
-        0
-        12px;
-    }
-
-    .summary {
-      color: var(--muted);
-      margin: 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 15px;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding:
-        5px
-        8px;
-      background: #ffffff;
-      border:
-        1px solid
-        var(--line);
-      border-radius: 999px;
-      color: #625b51;
-    }
-
-    .meta-note {
-      margin-top: 12px;
-      padding:
-        10px
-        12px;
-      background: #f7efe6;
-      border-radius: 12px;
-      color: #634424;
-      font-size: 0.9rem;
-    }
-
-    .course-actions {
-      margin-top: auto;
-      padding-top: 17px;
-    }
-
-    .details-btn {
-      width: 100%;
-      border: 0;
-      background: var(--dark);
-      color: #ffffff;
-      border-radius: 12px;
-      padding:
-        11px
-        13px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .locations {
-      display: grid;
-      grid-template-columns:
-        repeat(
-          3,
-          minmax(0, 1fr)
-        );
-      gap: 14px;
-    }
-
-    .location {
-      background: #ffffff;
-      border:
-        1px solid
-        var(--line);
-      border-radius: 18px;
-      padding: 17px;
-    }
-
-    .location h3 {
-      margin:
-        0
-        0
-        5px;
-      font-size: 1.05rem;
-    }
-
-    .location p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .location a {
-      display: inline-block;
-      margin-top: 11px;
-      font-weight: 780;
-      color: #6f3e17;
-      text-decoration: none;
-    }
-
-    dialog {
-      border: 0;
-      padding: 0;
-      background: transparent;
-      max-width:
-        min(
-          680px,
-          calc(100% - 22px)
-        );
-      width: 100%;
-    }
-
-    dialog::backdrop {
-      background:
-        rgba(
-          17,
-          17,
-          16,
-          0.66
-        );
-      backdrop-filter: blur(4px);
-    }
-
-    .dialog-card {
-      background: var(--card);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow:
-        0
-        30px
-        90px
-        rgba(
-          0,
-          0,
-          0,
-          0.30
-        );
-    }
-
-    .dialog-head {
-      padding:
-        22px
-        22px
-        12px;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .dialog-head h2 {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-      font-size:
-        clamp(
-          1.9rem,
-          7vw,
-          2.8rem
-        );
-      line-height: 1;
-      letter-spacing: -0.035em;
-      margin:
-        9px
-        0
-        7px;
-    }
-
-    .dialog-close {
-      border:
-        1px solid
-        var(--line);
-      background: #ffffff;
-      border-radius: 999px;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      font-size: 1.3rem;
-      flex:
-        0
-        0
-        40px;
-    }
-
-    .dialog-body {
-      padding:
-        0
-        22px
-        24px;
-    }
-
-    .dialog-body p {
-      color: #514c44;
-    }
-
-    .dialog-body .leaders {
-      color: var(--ink);
-    }
-
-    .dialog-cta {
-      display: grid;
-      grid-template-columns:
-        1fr
-        1fr;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .dialog-cta a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      text-decoration: none;
-      border:
-        1px solid
-        var(--line);
-      padding: 12px;
-      border-radius: 12px;
-      font-weight: 800;
-      background: #ffffff;
-    }
-
-    .dialog-cta a.primary {
-      background: var(--dark);
-      color: #ffffff;
-      border-color: var(--dark);
-    }
-
-    .mobile-register {
-      display: none;
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 30;
-      padding:
-        10px
-        max(
-          12px,
-          env(safe-area-inset-right)
-        )
-        calc(
-          10px +
-          env(safe-area-inset-bottom)
-        )
-        max(
-          12px,
-          env(safe-area-inset-left)
-        );
-      background:
-        rgba(
-          247,
-          243,
-          236,
-          0.96
-        );
-      border-top:
-        1px solid
-        var(--line);
-      backdrop-filter: blur(12px);
-    }
-
-    .mobile-register a {
-      display: flex;
-      justify-content: center;
-      text-decoration: none;
-      background: var(--dark);
-      color: #ffffff;
-      padding: 13px;
-      border-radius: 12px;
+    .session-kicker {
+      position: relative;
+      z-index: 1;
+      color: #eab582;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .75rem;
       font-weight: 850;
     }
 
-    .footer {
-      padding:
-        10px
-        0
-        34px;
+    .dashboard-title {
+      position: relative;
+      z-index: 1;
+      max-width: 740px;
+      margin-top: 7px;
+      font-size: clamp(2rem, 6vw, 4.15rem);
+      line-height: .98;
+      font-weight: 760;
+      letter-spacing: -.045em;
+    }
+
+    .dashboard-subtitle {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin-top: 12px;
+      color: #d9d2c8;
+      font-size: clamp(.98rem, 2vw, 1.12rem);
+      line-height: 1.45;
+    }
+
+    .session-stats {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .stat-chip {
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 12px;
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      font-size: .86rem;
+      font-weight: 720;
+      backdrop-filter: blur(8px);
+    }
+
+    /* App navigation */
+    .app-menu {
+      position: sticky;
+      top: calc(68px + env(safe-area-inset-top));
+      z-index: 40;
+      padding: 10px 0;
+      background: rgba(245,241,234,.92);
+      border-bottom: 1px solid rgba(222,214,202,.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .tab-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 5px 18px rgba(31,33,29,.04);
+    }
+
+    .tab-button {
+      min-height: 42px;
+      border: 0;
+      border-radius: 11px;
+      background: transparent;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
     }
 
-    .footer a {
-      font-weight: 700;
+    .tab-button[aria-selected="true"] {
+      background: var(--dark);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(23,23,21,.15);
     }
 
-    .hidden {
+    /* Screens */
+    .app-screen {
+      padding: 18px 0 110px;
+    }
+
+    .screen-panel[hidden] {
       display: none !important;
     }
 
-    @media (max-width: 800px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
+    .screen-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 7px 0 14px;
+    }
+
+    .screen-title {
+      font-size: clamp(1.6rem, 4vw, 2.15rem);
+      font-weight: 790;
+      letter-spacing: -.035em;
+    }
+
+    .screen-count {
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* Filters */
+    .filter-menu {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 0 0 14px;
+      scrollbar-width: none;
+    }
+
+    .filter-menu::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-chip {
+      flex: 0 0 auto;
+      min-height: 39px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: #5f594f;
+      font-weight: 760;
+      cursor: pointer;
+    }
+
+    .filter-chip[aria-pressed="true"] {
+      background: var(--accent-soft);
+      border-color: #d7af89;
+      color: #713d15;
+    }
+
+    /* Class widgets: intentionally short, action-oriented UI */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .course-widget {
+      width: 100%;
+      min-width: 0;
+      padding: 18px;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      appearance: none;
+      transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        border-color .16s ease;
+    }
+
+    .course-widget:hover {
+      transform: translateY(-2px);
+      border-color: #cfbda9;
+      box-shadow: 0 18px 44px rgba(29,27,23,.12);
+    }
+
+    .course-widget:focus-visible,
+    .filter-chip:focus-visible,
+    .tab-button:focus-visible,
+    .close-button:focus-visible {
+      outline: 3px solid rgba(182,108,47,.34);
+      outline-offset: 2px;
+    }
+
+    .widget-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .campus-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: #5e594f;
+      font-size: .75rem;
+      font-weight: 820;
+    }
+
+    .campus-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .widget-chevron {
+      color: #9e9588;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .course-name {
+      margin-top: 13px;
+      font-size: 1.22rem;
+      line-height: 1.13;
+      font-weight: 820;
+      letter-spacing: -.025em;
+    }
+
+    .course-leader {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: .91rem;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    .widget-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 13px;
+    }
+
+    .widget-tag {
+      padding: 4px 7px;
+      border: 1px solid #e3ddd3;
+      border-radius: 7px;
+      background: #fff;
+      color: #655f56;
+      font-size: .71rem;
+      font-weight: 720;
+    }
+
+    .widget-alert {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 5px 8px;
+      border-radius: 8px;
+      background: #f7ede3;
+      color: #704419;
+      font-size: .75rem;
+      font-weight: 760;
+    }
+
+    /* Session dashboard: compact UI tiles instead of reading blocks */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .info-widget,
+    .location-widget {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .info-widget {
+      min-height: 150px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info-widget.primary-info {
+      background:
+        radial-gradient(circle at 88% 20%, rgba(182,108,47,.16), transparent 42%),
+        var(--surface);
+    }
+
+    .info-widget.register-tile {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+
+    .info-widget.register-tile .widget-label,
+    .info-widget.register-tile .widget-copy {
+      color: #cfc7bd;
+    }
+
+    .widget-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .71rem;
+      font-weight: 850;
+    }
+
+    .widget-title {
+      margin-top: 6px;
+      font-size: 1.32rem;
+      font-weight: 840;
+      letter-spacing: -.03em;
+    }
+
+    .widget-copy {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.42;
+      font-size: .9rem;
+    }
+
+    .date-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .date-tile {
+      padding: 9px 6px;
+      border-radius: 11px;
+      background: var(--surface-2);
+      text-align: center;
+      font-size: .79rem;
+      font-weight: 790;
+    }
+
+    .info-value {
+      margin-top: 12px;
+      font-size: clamp(1.55rem, 4vw, 2.25rem);
+      line-height: 1;
+      font-weight: 860;
+      letter-spacing: -.04em;
+    }
+
+    .info-mini-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 13px;
+    }
+
+    .info-mini-chip {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: #5e584f;
+      font-size: .76rem;
+      font-weight: 760;
+    }
+
+    .register-tile .map-button {
+      margin-top: 16px;
+      background: #fff;
+      color: var(--dark);
+    }
+
+    @media (min-width: 761px) {
+      .register-tile {
+        grid-column: 1 / -1;
+        min-height: 132px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
         gap: 18px;
       }
 
-      .hero-card {
-        max-width: none;
+      .register-tile .map-button {
+        min-width: 220px;
+        margin-top: 0;
+      }
+    }
+
+    /* Location screen */
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .location-widget {
+      padding: 18px;
+    }
+
+    .location-name {
+      font-size: 1.08rem;
+      font-weight: 820;
+      letter-spacing: -.02em;
+    }
+
+    .location-note {
+      margin-top: 5px;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 730;
+    }
+
+    .location-address {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.4;
+    }
+
+    .map-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin-top: 14px;
+      border-radius: 11px;
+      background: var(--dark);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 790;
+    }
+
+    /* Class detail sheet */
+    dialog {
+      width: min(660px, calc(100% - 22px));
+      max-height: min(86vh, 800px);
+      padding: 0;
+      border: 0;
+      border-radius: 24px;
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    dialog::backdrop {
+      background: rgba(10,10,9,.68);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .sheet-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(255,253,249,.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .sheet-toolbar-spacer {
+      flex: 1;
+    }
+
+    .close-button {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--ink);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .sheet-panel {
+      padding: 20px 20px calc(22px + env(safe-area-inset-bottom));
+      overflow-y: auto;
+    }
+
+    .sheet-title {
+      margin-top: 13px;
+      font-size: clamp(1.75rem, 6vw, 2.45rem);
+      line-height: 1.03;
+      font-weight: 820;
+      letter-spacing: -.04em;
+    }
+
+    .sheet-leader {
+      margin-top: 8px;
+      color: #504b43;
+      font-weight: 720;
+    }
+
+    .sheet-description {
+      margin-top: 18px;
+      color: #575149;
+      line-height: 1.62;
+      font-size: 1rem;
+    }
+
+    .sheet-note {
+      margin-top: 12px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: #f7ede3;
+      color: #67401d;
+      line-height: 1.4;
+      font-size: .9rem;
+    }
+
+    .sheet-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .sheet-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .sheet-action.primary {
+      border-color: var(--dark);
+      background: var(--dark);
+      color: #fff;
+    }
+
+    /* Mobile bottom navigation */
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(100% - 20px, var(--max));
       }
 
-      .intro-grid {
-        grid-template-columns: 1fr;
+      .toolbar-inner {
+        min-height: 61px;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .toolbar-logo {
+        width: min(205px, 50vw);
       }
 
-      .locations {
-        grid-template-columns: 1fr;
-      }
-
-      .spacer {
+      .toolbar-date {
         display: none;
       }
 
-      .mobile-register {
-        display: block;
+      .register-button {
+        min-height: 38px;
+        padding: 0 13px;
+        font-size: .9rem;
       }
 
-      .action-inner .primary {
+      .dashboard {
+        padding-top: 12px;
+      }
+
+      .dashboard-card {
+        padding: 23px 19px;
+        border-radius: 21px;
+      }
+
+      .dashboard-title {
+        font-size: clamp(2rem, 10vw, 3.05rem);
+      }
+
+      .dashboard-subtitle {
+        font-size: .97rem;
+      }
+
+      .app-menu {
         display: none;
       }
 
-      main {
-        padding-bottom: 110px;
+      .app-screen {
+        padding-top: 15px;
+        padding-bottom: calc(92px + env(safe-area-inset-bottom));
       }
 
-      .course {
-        padding: 17px;
-      }
-
-      .summary {
-        -webkit-line-clamp: 4;
-      }
-
-      .section-head {
-        align-items: start;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .brand-logo {
-        width: min(100%, 470px);
-      }
-
-      .dialog-cta {
+      .course-grid,
+      .info-grid,
+      .location-grid {
         grid-template-columns: 1fr;
+      }
+
+      .date-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .course-widget {
+        padding: 16px;
+        border-radius: 17px;
+      }
+
+      .course-name {
+        font-size: 1.16rem;
+      }
+
+      .screen-heading {
+        align-items: center;
+        margin-top: 2px;
+      }
+
+      .mobile-menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom));
+        z-index: 60;
+        padding: 6px;
+        border: 1px solid rgba(222,214,202,.9);
+        border-radius: 18px;
+        background: rgba(255,253,249,.94);
+        box-shadow: 0 14px 48px rgba(20,18,15,.18);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+      }
+
+      .mobile-tab {
+        min-height: 47px;
+        border: 0;
+        border-radius: 13px;
+        background: transparent;
+        color: #787168;
+        font-size: .78rem;
+        font-weight: 800;
+      }
+
+      .mobile-tab[aria-selected="true"] {
+        background: var(--dark);
+        color: #fff;
+      }
+
+      dialog {
+        width: calc(100% - 16px);
+        max-height: calc(100vh - 18px);
+        border-radius: 22px;
+      }
+
+      .sheet-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .session-stats {
+        gap: 7px;
+      }
+
+      .stat-chip {
+        font-size: .79rem;
+      }
+
+      .filter-chip {
+        min-height: 37px;
       }
     }
 
@@ -916,769 +885,569 @@
 </head>
 
 <body>
-
-  <header class="hero">
-    <div class="wrap hero-inner">
-
-      <div>
-
-        <div class="brand">
-          <img
-            class="brand-logo"
-            src="crossroads-logo-white.png"
-            alt="Crossroads — Jeremiah 6:16"
-          >
-        </div>
-
-        <div
-          class="eyebrow"
-          id="session-label"
-        ></div>
-
-        <h1>
-          Choose a class.<br>
-          Practice the way of Jesus.
-        </h1>
-
-        <p
-          class="subtitle"
-          id="session-subtitle"
-        ></p>
-
-      </div>
-
-      <aside
-        class="hero-card"
-        aria-label="Session schedule"
+  <div class="app-toolbar">
+    <div class="shell toolbar-inner">
+      <img
+        class="toolbar-logo"
+        src="crossroads-logo-white.png"
+        alt="Crossroads — Jeremiah 6:16"
       >
 
-        <strong>
-          Four Wednesday nights
-        </strong>
+      <div class="toolbar-spacer"></div>
 
-        <div
-          class="dates"
-          id="hero-dates"
-        ></div>
-
-        <p id="hero-time"></p>
-
-      </aside>
-
-    </div>
-  </header>
-
-  <nav
-    class="action-bar"
-    aria-label="Class filters and actions"
-  >
-
-    <div
-      class="wrap action-inner"
-      id="filters"
-    >
-
-      <button
-        class="filter"
-        data-filter="all"
-        aria-pressed="true"
-      >
-        All classes
-      </button>
-
-      <button
-        class="filter"
-        data-filter="york"
-        aria-pressed="false"
-      >
-        York
-      </button>
-
-      <button
-        class="filter"
-        data-filter="spring-grove"
-        aria-pressed="false"
-      >
-        Spring Grove
-      </button>
-
-      <button
-        class="filter"
-        data-filter="valleyview"
-        aria-pressed="false"
-      >
-        ValleyView
-      </button>
-
-      <span class="spacer"></span>
+      <div class="toolbar-date" id="toolbar-date"></div>
 
       <a
-        class="btn"
-        href="#locations"
-      >
-        Locations
-      </a>
-
-      <a
-        class="btn primary"
+        class="register-button"
         id="register-top"
         href="https://yafc.churchcenter.com/people/forms/1319101"
       >
         Register
       </a>
-
     </div>
-  </nav>
+  </div>
 
-  <main class="wrap">
+  <div class="dashboard">
+    <div class="shell">
+      <div class="dashboard-card">
+        <div class="session-kicker" id="session-label"></div>
 
-    <section
-      class="intro-grid"
-      aria-label="Crossroads overview"
-    >
-
-      <div class="info-card">
-
-        <h2>
-          One class. Four weeks.
-        </h2>
-
-        <p>
-          Choose one class and stay with it through all four sessions.
-          Use the campus filters to quickly see what is offered near you.
-        </p>
-
-        <div
-          class="date-pills"
-          id="date-pills"
-        ></div>
-
-      </div>
-
-      <div class="info-card">
-
-        <h2>
-          Start together
-        </h2>
-
-        <p id="opening-note"></p>
-
-      </div>
-
-    </section>
-
-    <section aria-labelledby="classes-heading">
-
-      <div class="section-head">
-
-        <div>
-
-          <p>
-            October 2026
-          </p>
-
-          <h2 id="classes-heading">
-            Explore classes
-          </h2>
-
+        <div class="dashboard-title">
+          Find your Crossroads class.
         </div>
 
-        <div
-          class="count"
-          id="result-count"
-        ></div>
+        <div class="dashboard-subtitle" id="session-subtitle"></div>
 
-      </div>
-
-      <div
-        class="grid"
-        id="course-grid"
-      ></div>
-
-    </section>
-
-    <section
-      id="locations"
-      aria-labelledby="locations-heading"
-    >
-
-      <div class="section-head">
-
-        <div>
-
-          <p>
-            Three campuses
-          </p>
-
-          <h2 id="locations-heading">
-            Class locations
-          </h2>
-
+        <div class="session-stats">
+          <div class="stat-chip" id="hero-dates"></div>
+          <div class="stat-chip" id="hero-time"></div>
+          <div class="stat-chip" id="hero-class-count"></div>
         </div>
-
       </div>
+    </div>
+  </div>
 
-      <div
-        class="locations"
-        id="location-grid"
-      ></div>
-
-    </section>
-
-    <footer class="footer">
-
-      Questions? Contact the York Alliance office at
-
-      <a href="tel:+17178481700">
-        (717) 848-1700
-      </a>
-
-      or
-
-      <a href="mailto:info@yorkalliance.org">
-        info@yorkalliance.org
-      </a>.
-
-    </footer>
-
-  </main>
-
-  <dialog
-    id="course-dialog"
-    aria-labelledby="dialog-title"
-  >
-
-    <div class="dialog-card">
-
-      <div class="dialog-head">
-
-        <div>
-
-          <span
-            class="campus"
-            id="dialog-campus"
-          ></span>
-
-          <h2 id="dialog-title"></h2>
-
-        </div>
-
+  <div class="app-menu">
+    <div class="shell">
+      <div class="tab-bar" role="tablist" aria-label="Crossroads">
         <button
-          class="dialog-close"
-          id="dialog-close"
-          aria-label="Close"
+          class="tab-button"
+          type="button"
+          role="tab"
+          data-view="classes"
+          aria-selected="true"
         >
-          ×
+          Classes
         </button>
 
+        <button
+          class="tab-button"
+          type="button"
+          role="tab"
+          data-view="info"
+          aria-selected="false"
+        >
+          Session Info
+        </button>
+
+        <button
+          class="tab-button"
+          type="button"
+          role="tab"
+          data-view="locations"
+          aria-selected="false"
+        >
+          Locations
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-screen shell">
+
+    <!-- CLASSES SCREEN -->
+    <div
+      class="screen-panel"
+      id="screen-classes"
+      data-screen="classes"
+      role="tabpanel"
+    >
+      <div class="screen-heading">
+        <div class="screen-title">Choose a class</div>
+        <div class="screen-count" id="result-count"></div>
       </div>
 
-      <div class="dialog-body">
+      <div class="filter-menu" aria-label="Filter classes by campus">
+        <button
+          class="filter-chip"
+          type="button"
+          data-filter="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
 
-        <p
-          class="leaders"
-          id="dialog-leaders"
-        ></p>
+        <button
+          class="filter-chip"
+          type="button"
+          data-filter="york"
+          aria-pressed="false"
+        >
+          York
+        </button>
 
-        <p id="dialog-description"></p>
+        <button
+          class="filter-chip"
+          type="button"
+          data-filter="spring-grove"
+          aria-pressed="false"
+        >
+          Spring Grove
+        </button>
 
-        <div id="dialog-notes"></div>
+        <button
+          class="filter-chip"
+          type="button"
+          data-filter="valleyview"
+          aria-pressed="false"
+        >
+          ValleyView
+        </button>
+      </div>
 
-        <div class="dialog-cta">
+      <div class="course-grid" id="course-grid"></div>
+    </div>
+
+    <!-- INFO SCREEN -->
+    <div
+      class="screen-panel"
+      id="screen-info"
+      data-screen="info"
+      role="tabpanel"
+      hidden
+    >
+      <div class="screen-heading">
+        <div class="screen-title">Session info</div>
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-widget primary-info">
+          <div>
+            <div class="widget-label">Dates</div>
+            <div class="widget-title">Four Wednesday nights</div>
+          </div>
+          <div class="date-grid" id="date-grid"></div>
+        </div>
+
+        <div class="info-widget">
+          <div>
+            <div class="widget-label">Time</div>
+            <div class="info-value" id="info-time"></div>
+          </div>
+          <div class="widget-copy">Same schedule each week.</div>
+        </div>
+
+        <div class="info-widget">
+          <div>
+            <div class="widget-label">First night</div>
+            <div class="widget-title">Start together</div>
+          </div>
+          <div class="widget-copy" id="opening-note"></div>
+        </div>
+
+        <div class="info-widget">
+          <div>
+            <div class="widget-label">Campuses</div>
+            <div class="widget-title">Three locations</div>
+          </div>
+          <div class="info-mini-row" aria-label="Crossroads campuses">
+            <span class="info-mini-chip">York</span>
+            <span class="info-mini-chip">Spring Grove</span>
+            <span class="info-mini-chip">ValleyView</span>
+          </div>
+        </div>
+
+        <div class="info-widget register-tile">
+          <div>
+            <div class="widget-label">Registration</div>
+            <div class="widget-title">Choose your class</div>
+            <div class="widget-copy">Continue in Church Center to register.</div>
+          </div>
 
           <a
-            id="dialog-directions"
-            href="#"
-            target="_blank"
-            rel="noopener"
-          >
-            Directions
-          </a>
-
-          <a
-            class="primary"
-            id="dialog-register"
+            class="map-button"
+            id="register-info"
             href="https://yafc.churchcenter.com/people/forms/1319101"
           >
-            Register
+            Register for Crossroads
           </a>
-
         </div>
 
       </div>
-
     </div>
 
+    <!-- LOCATIONS SCREEN -->
+    <div
+      class="screen-panel"
+      id="screen-locations"
+      data-screen="locations"
+      role="tabpanel"
+      hidden
+    >
+      <div class="screen-heading">
+        <div class="screen-title">Locations</div>
+        <div class="screen-count" id="location-count"></div>
+      </div>
+
+      <div class="location-grid" id="location-grid"></div>
+    </div>
+  </div>
+
+  <dialog id="course-dialog" aria-labelledby="sheet-title">
+    <div class="sheet-toolbar">
+      <div class="campus-pill" id="sheet-campus"></div>
+      <div class="sheet-toolbar-spacer"></div>
+      <button
+        class="close-button"
+        id="sheet-close"
+        type="button"
+        aria-label="Close class details"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="sheet-panel">
+      <div class="sheet-title" id="sheet-title"></div>
+      <div class="sheet-leader" id="sheet-leader"></div>
+      <div class="sheet-description" id="sheet-description"></div>
+      <div id="sheet-notes"></div>
+
+      <div class="sheet-actions">
+        <a
+          class="sheet-action"
+          id="sheet-directions"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          Directions
+        </a>
+
+        <a
+          class="sheet-action primary"
+          id="sheet-register"
+          href="https://yafc.churchcenter.com/people/forms/1319101"
+        >
+          Register
+        </a>
+      </div>
+    </div>
   </dialog>
 
-  <div class="mobile-register">
-
-    <a
-      id="register-mobile"
-      href="https://yafc.churchcenter.com/people/forms/1319101"
+  <div class="mobile-menu" role="tablist" aria-label="Crossroads navigation">
+    <button
+      class="mobile-tab"
+      type="button"
+      role="tab"
+      data-view="classes"
+      aria-selected="true"
     >
-      Register for Crossroads
-    </a>
+      Classes
+    </button>
 
+    <button
+      class="mobile-tab"
+      type="button"
+      role="tab"
+      data-view="info"
+      aria-selected="false"
+    >
+      Info
+    </button>
+
+    <button
+      class="mobile-tab"
+      type="button"
+      role="tab"
+      data-view="locations"
+      aria-selected="false"
+    >
+      Locations
+    </button>
   </div>
 
   <script src="crossroads-data.js"></script>
 
   <script>
+    const data = window.CROSSROADS_DATA;
+    const campusById = Object.fromEntries(
+      data.campuses.map(campus => [campus.id, campus])
+    );
 
-    const data =
-      window.CROSSROADS_DATA;
+    let activeFilter = "all";
+    let activeView = "classes";
 
-    const campusById =
-      Object.fromEntries(
-        data.campuses.map(
-          campus => [
-            campus.id,
-            campus
-          ]
-        )
-      );
+    const registrationLinks = document.querySelectorAll(
+      "#register-top, #register-info, #sheet-register"
+    );
 
-    let activeFilter =
-      "all";
+    registrationLinks.forEach(link => {
+      link.href = data.session.registrationUrl;
+    });
 
-    document
-      .getElementById(
-        "session-label"
-      )
-      .textContent =
+    document.getElementById("session-label").textContent =
       data.session.label;
 
-    document
-      .getElementById(
-        "session-subtitle"
-      )
-      .textContent =
+    document.getElementById("session-subtitle").textContent =
       data.session.subtitle;
 
-    document
-      .getElementById(
-        "hero-dates"
-      )
-      .textContent =
+    document.getElementById("toolbar-date").textContent =
+      data.session.label;
+
+    document.getElementById("hero-dates").textContent =
       data.session.dates
-        .map(
-          date =>
-            date.replace(
-              "October ",
-              "Oct "
-            )
-        )
+        .map(date => date.replace("October ", "Oct "))
         .join(" · ");
 
-    document
-      .getElementById(
-        "hero-time"
-      )
-      .textContent =
+    document.getElementById("hero-time").textContent =
       `${data.session.startTime}–${data.session.endTime}`;
 
-    document
-      .getElementById(
-        "opening-note"
-      )
-      .textContent =
+    document.getElementById("hero-class-count").textContent =
+      `${data.classes.length} classes`;
+
+    document.getElementById("opening-note").textContent =
       data.session.openingNote;
 
-    document
-      .querySelectorAll(
-        "#register-top, #register-mobile, #dialog-register"
-      )
-      .forEach(
-        link => {
-          link.href =
-            data.session.registrationUrl;
-        }
-      );
+    document.getElementById("info-time").textContent =
+      `${data.session.startTime}–${data.session.endTime}`;
 
-    document
-      .getElementById(
-        "date-pills"
-      )
-      .innerHTML =
+    document.getElementById("location-count").textContent =
+      `${data.campuses.length} campuses`;
+
+    document.getElementById("date-grid").innerHTML =
       data.session.dates
-        .map(
-          date =>
-            `<span class="date-pill">${date}</span>`
-        )
+        .map(date => `<div class="date-tile">${escapeHtml(date)}</div>`)
         .join("");
 
-    function renderClasses() {
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
 
+    function renderClasses() {
       const list =
         activeFilter === "all"
           ? data.classes
-          : data.classes.filter(
-              course =>
-                course.campus ===
-                activeFilter
-            );
+          : data.classes.filter(course => course.campus === activeFilter);
 
-      document
-        .getElementById(
-          "result-count"
-        )
-        .textContent =
-        `${list.length} ${
-          list.length === 1
-            ? "class"
-            : "classes"
-        }`;
+      document.getElementById("result-count").textContent =
+        `${list.length} ${list.length === 1 ? "class" : "classes"}`;
 
-      document
-        .getElementById(
-          "course-grid"
-        )
-        .innerHTML =
-        list
-          .map(
-            course => {
+      /*
+       * Keep the browse screen intentionally concise.
+       * Full descriptions do not exist in the visible DOM until a user
+       * opens a class detail sheet.
+       */
+      document.getElementById("course-grid").innerHTML =
+        list.map(course => {
+          const campus = campusById[course.campus];
+          const originalIndex = data.classes.indexOf(course);
 
-              const campus =
-                campusById[
-                  course.campus
-                ];
+          const tags = (course.tags || [])
+            .map(tag => `<span class="widget-tag">${escapeHtml(tag)}</span>`)
+            .join("");
 
-              const note =
-                [
-                  course.capacity,
-                  course.requirement
-                ]
-                  .filter(Boolean)
-                  .join(" · ");
+          let alert = "";
 
-              const tags =
-                (
-                  course.tags ||
-                  []
-                )
-                  .map(
-                    tag =>
-                      `<span class="tag">${tag}</span>`
-                  )
-                  .join("");
-
-              return `
-                <article class="course">
-
-                  <div class="course-top">
-
-                    <span class="campus">
-                      ${campus.shortName}
-                    </span>
-
-                  </div>
-
-                  <h3>
-                    ${course.title}
-                  </h3>
-
-                  <p class="leaders">
-                    ${course.leaders}
-                  </p>
-
-                  <p class="summary">
-                    ${course.description}
-                  </p>
-
-                  <div class="tags">
-                    ${tags}
-                  </div>
-
-                  ${
-                    note
-                      ? `
-                        <div class="meta-note">
-                          ${note}
-                        </div>
-                      `
-                      : ""
-                  }
-
-                  <div class="course-actions">
-
-                    <button
-                      class="details-btn"
-                      data-course="${data.classes.indexOf(course)}"
-                    >
-                      View class details
-                    </button>
-
-                  </div>
-
-                </article>
-              `;
-            }
-          )
-          .join("");
-
-      document
-        .querySelectorAll(
-          ".details-btn"
-        )
-        .forEach(
-          button => {
-
-            button
-              .addEventListener(
-                "click",
-                () => {
-
-                  openCourse(
-                    Number(
-                      button.dataset.course
-                    )
-                  );
-
-                }
-              );
-
+          if (course.capacity) {
+            alert = `<div class="widget-alert">${escapeHtml(course.capacity)}</div>`;
+          } else if (course.requirement) {
+            alert = `<div class="widget-alert">Book / material note</div>`;
           }
-        );
 
+          return `
+            <button
+              class="course-widget"
+              type="button"
+              data-course="${originalIndex}"
+              aria-label="View details for ${escapeHtml(course.title)}"
+            >
+              <div class="widget-topline">
+                <span class="campus-pill">${escapeHtml(campus.shortName)}</span>
+                <span class="widget-chevron" aria-hidden="true">›</span>
+              </div>
+
+              <div class="course-name">${escapeHtml(course.title)}</div>
+              <div class="course-leader">${escapeHtml(course.leaders)}</div>
+
+              <div class="widget-tags">${tags}</div>
+              ${alert}
+            </button>
+          `;
+        }).join("");
+
+      document.querySelectorAll(".course-widget").forEach(button => {
+        button.addEventListener("click", () => {
+          openCourse(Number(button.dataset.course));
+        });
+      });
     }
 
     function renderLocations() {
+      document.getElementById("location-grid").innerHTML =
+        data.campuses.map(campus => `
+          <div class="location-widget">
+            <div class="location-name">${escapeHtml(campus.name)}</div>
 
-      document
-        .getElementById(
-          "location-grid"
-        )
-        .innerHTML =
-        data.campuses
-          .map(
-            campus => `
-              <article class="location">
+            ${
+              campus.venueNote
+                ? `<div class="location-note">${escapeHtml(campus.venueNote)}</div>`
+                : ""
+            }
 
-                <h3>
-                  ${campus.name}
-                </h3>
+            <div class="location-address">${escapeHtml(campus.address)}</div>
 
-                ${
-                  campus.venueNote
-                    ? `
-                      <p>
-                        ${campus.venueNote}
-                      </p>
-                    `
-                    : ""
-                }
-
-                <p>
-                  ${campus.address}
-                </p>
-
-                <a
-                  href="${campus.directionsUrl}"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Get directions →
-                </a>
-
-              </article>
-            `
-          )
-          .join("");
-
+            <a
+              class="map-button"
+              href="${campus.directionsUrl}"
+              target="_blank"
+              rel="noopener"
+            >
+              Get directions
+            </a>
+          </div>
+        `).join("");
     }
 
-    function openCourse(
-      index
-    ) {
+    function openCourse(index) {
+      const course = data.classes[index];
+      const campus = campusById[course.campus];
 
-      const course =
-        data.classes[
-          index
-        ];
-
-      const campus =
-        campusById[
-          course.campus
-        ];
-
-      document
-        .getElementById(
-          "dialog-campus"
-        )
-        .textContent =
+      document.getElementById("sheet-campus").textContent =
         campus.shortName;
 
-      document
-        .getElementById(
-          "dialog-title"
-        )
-        .textContent =
+      document.getElementById("sheet-title").textContent =
         course.title;
 
-      document
-        .getElementById(
-          "dialog-leaders"
-        )
-        .textContent =
+      document.getElementById("sheet-leader").textContent =
         course.leaders;
 
-      document
-        .getElementById(
-          "dialog-description"
-        )
-        .textContent =
+      /*
+       * The long text is injected only when the sheet is opened.
+       */
+      document.getElementById("sheet-description").textContent =
         course.description;
 
       const notes = [];
 
-      if (
-        course.capacity
-      ) {
-
+      if (course.capacity) {
         notes.push(
-          `
-            <div class="meta-note">
-
-              <strong>
-                Capacity:
-              </strong>
-
-              ${course.capacity}
-
-            </div>
-          `
+          `<div class="sheet-note"><strong>Capacity:</strong> ${escapeHtml(course.capacity)}</div>`
         );
-
       }
 
-      if (
-        course.requirement
-      ) {
-
+      if (course.requirement) {
         notes.push(
-          `
-            <div class="meta-note">
-
-              <strong>
-                Good to know:
-              </strong>
-
-              ${course.requirement}
-
-            </div>
-          `
+          `<div class="sheet-note"><strong>Good to know:</strong> ${escapeHtml(course.requirement)}</div>`
         );
-
       }
 
-      document
-        .getElementById(
-          "dialog-notes"
-        )
-        .innerHTML =
+      document.getElementById("sheet-notes").innerHTML =
         notes.join("");
 
-      document
-        .getElementById(
-          "dialog-directions"
-        )
-        .href =
+      document.getElementById("sheet-directions").href =
         campus.directionsUrl;
 
-      document
-        .getElementById(
-          "course-dialog"
-        )
-        .showModal();
-
+      const dialog = document.getElementById("course-dialog");
+      dialog.showModal();
     }
 
-    document
-      .getElementById(
-        "dialog-close"
-      )
-      .addEventListener(
-        "click",
-        () => {
+    function closeCourse() {
+      const dialog = document.getElementById("course-dialog");
+      dialog.close();
 
-          document
-            .getElementById(
-              "course-dialog"
-            )
-            .close();
+      /*
+       * Remove long class copy from the DOM after closing the sheet.
+       */
+      document.getElementById("sheet-description").textContent = "";
+      document.getElementById("sheet-notes").innerHTML = "";
+    }
 
+    function setView(view) {
+      activeView = view;
+
+      document.querySelectorAll("[data-screen]").forEach(screen => {
+        screen.hidden = screen.dataset.screen !== view;
+      });
+
+      document.querySelectorAll("[data-view]").forEach(button => {
+        button.setAttribute(
+          "aria-selected",
+          String(button.dataset.view === view)
+        );
+      });
+
+      window.scrollTo({
+        top: 0,
+        behavior:
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth"
+      });
+    }
+
+    document.querySelectorAll(".filter-chip").forEach(button => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+
+        document.querySelectorAll(".filter-chip").forEach(filterButton => {
+          filterButton.setAttribute(
+            "aria-pressed",
+            String(filterButton === button)
+          );
+        });
+
+        renderClasses();
+      });
+    });
+
+    document.querySelectorAll("[data-view]").forEach(button => {
+      button.addEventListener("click", () => {
+        setView(button.dataset.view);
+      });
+    });
+
+    document.getElementById("sheet-close").addEventListener(
+      "click",
+      closeCourse
+    );
+
+    document.getElementById("course-dialog").addEventListener(
+      "click",
+      event => {
+        if (event.target === event.currentTarget) {
+          closeCourse();
         }
-      );
+      }
+    );
 
-    document
-      .getElementById(
-        "course-dialog"
-      )
-      .addEventListener(
-        "click",
-        event => {
-
-          if (
-            event.target ===
-            event.currentTarget
-          ) {
-
-            event
-              .currentTarget
-              .close();
-
-          }
-
-        }
-      );
-
-    document
-      .querySelectorAll(
-        ".filter"
-      )
-      .forEach(
-        button => {
-
-          button
-            .addEventListener(
-              "click",
-              () => {
-
-                activeFilter =
-                  button.dataset.filter;
-
-                document
-                  .querySelectorAll(
-                    ".filter"
-                  )
-                  .forEach(
-                    filterButton => {
-
-                      filterButton
-                        .setAttribute(
-                          "aria-pressed",
-                          String(
-                            filterButton ===
-                            button
-                          )
-                        );
-
-                    }
-                  );
-
-                renderClasses();
-
-              }
-            );
-
-        }
-      );
+    document.getElementById("course-dialog").addEventListener(
+      "cancel",
+      event => {
+        event.preventDefault();
+        closeCourse();
+      }
+    );
 
     renderClasses();
     renderLocations();
-
+    setView("classes");
   </script>
-
 </body>
 </html>
